@@ -12,13 +12,15 @@
     <li>Для изменения сущности</li>
     <li>Для добавления новых людей в формате</li>
   </ol>
-  ```
-  {
-    "name": "Dmitriy",
-    "surname": "Ushakov",
-    "patronymic": "Vasilevich" // необязательно
-  }
-  ```
+  <code>
+    ```
+    {
+      "name": "Dmitriy",
+      "surname": "Ushakov",
+      "patronymic": "Vasilevich" // необязательно
+    }
+    ```
+  </code>
   <li>Корректное сообщение обогатить</li>
   <ol>
     <li>Возрастом - https://api.agify.io/?name=Dmitriy</li>
