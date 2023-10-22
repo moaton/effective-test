@@ -23,9 +23,13 @@ type Logger interface {
 }
 
 var impl Logger
+var loggerSpace = "dev"
 
-func SetLogger(repository Logger) {
-	impl = repository
+func SetLogger(isDebug bool) {
+	if isDebug {
+		loggerSpace = "prod"
+	}
+	impl = NewZapLogger(loggerSpace)
 }
 
 func Info(args ...interface{}) {

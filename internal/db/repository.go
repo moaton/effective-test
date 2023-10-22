@@ -6,9 +6,9 @@ import (
 )
 
 type Repository interface {
-	GetUsers(ctx context.Context, params models.Params) ([]models.User, error)
-	InsertUser(ctx context.Context, user models.User) (int64, error)
-	UpdateUser(ctx context.Context, user models.User) error
+	GetUsers(ctx context.Context, params models.Params) ([]models.User, int64, error)
+	InsertUser(ctx context.Context, user *models.User) (int64, error)
+	UpdateUser(ctx context.Context, user *models.User) error
 	DeleteUser(ctx context.Context, id int64) error
 }
 
@@ -18,15 +18,15 @@ func NewRepository(repo Repository) {
 	impl = repo
 }
 
-func GetUsers(ctx context.Context, params models.Params) ([]models.User, error) {
+func GetUsers(ctx context.Context, params models.Params) ([]models.User, int64, error) {
 	return impl.GetUsers(ctx, params)
 }
 
-func InsertUser(ctx context.Context, user models.User) (int64, error) {
+func InsertUser(ctx context.Context, user *models.User) (int64, error) {
 	return impl.InsertUser(ctx, user)
 }
 
-func UpdateUser(ctx context.Context, user models.User) error {
+func UpdateUser(ctx context.Context, user *models.User) error {
 	return impl.UpdateUser(ctx, user)
 }
 
