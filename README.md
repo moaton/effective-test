@@ -13,13 +13,11 @@
     <li>Для добавления новых людей в формате</li>
   </ol>
   <code>
-    ```
     {
       "name": "Dmitriy",
       "surname": "Ushakov",
       "patronymic": "Vasilevich" // необязательно
     }
-    ```
   </code>
   <li>Корректное сообщение обогатить</li>
   <ol>
